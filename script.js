@@ -10,6 +10,5 @@ openRules.addEventListener("click", () => {
 
 closeIcon.addEventListener("click", () => {
   ruleModal.style.display = "none";
-
   openRules.style.display = "block";
 });

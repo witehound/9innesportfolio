@@ -12,6 +12,82 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  gap: 150px;
+}
+
+.header {
+  display: flex;
+  padding: 15px;
+  border: solid 1px white;
+  border-radius: 1rem;
+  color: white;
+  width: 45%;
+  justify-content: space-between;
+}
+
+.score {
+  background-color: white;
+  padding: 0px 40px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.score p {
+  color: hsl(229, 64%, 46%);
+  font-size: 12px;
+}
+
+.score h1 {
+  color: grey;
+  font-size: 50px;
+}
+
+.game {
+  background-image: url("./images/bg-triangle.svg");
+  width: 50%;
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  display: flex;
+}
+
+.game-icon {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+}
+
+#hand {
+  top: -25%;
+  left: 20%;
+}
+
+#scissors {
+  top: -25%;
+  right: 20%;
+}
+
+#rock {
+  top: 75%;
+  left: 40%;
+
+  /* right: 0; */
+}
+
+.game-icon img {
+  width: 50px;
 }
 
 .rules {

@@ -24,22 +24,45 @@
       </h1>
       <div class="score">
         <p>SCORE</p>
-        <h1>10</h1>
+        <h1>0</h1>
       </div>
     </div>
 
-    <div class="game">
-      <div class="game-icon" id="hand">
-        <img src="./images/icon-paper.svg" alt="" />
+    <div class="game" id="game">
+      <div class="game-hand" id="hand">
+        <div class="game-icon">
+          <img src="./images/icon-paper.svg" alt="" />
+        </div>
       </div>
-      <div class="game-icon" id="scissors">
-        <img src="./images/icon-scissors.svg" alt="" />
+      <div class="game-scissors" id="scissors">
+        <div class="game-icon">
+          <img src="./images/icon-scissors.svg" alt="" />
+        </div>
       </div>
-      <div class="game-icon" id="rock">
-        <img src="./images/icon-rock.svg" alt="" />
+      <div class="game-rock" id="rock">
+        <div class="game-icon">
+          <img src="./images/icon-rock.svg" alt="" />
+        </div>
       </div>
     </div>
-
+    <div id="game-screen">
+      <div class="screen-con">
+        <p>YOU PICKED</p>
+        <div id="user-screen-item">
+          <div class="game-icon" id="user">
+            <!-- <img alt="picked" id="use"/> -->
+          </div>
+        </div>
+      </div>
+      <div class="screen-con">
+        <p>THE HOUSE PICKED</p>
+        <div id="computer-screen-item">
+          <div class="game-icon" id="computer">
+            <!-- <img alt="" /> -->
+          </div>
+        </div>
+      </div>
+    </div>
     <button type="button" class="rule-footer" id="rule-footer">RULES</button>
     <div class="rules" id="rules">
       <div class="rule">

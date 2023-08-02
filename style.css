@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 25px;
-  gap: 150px;
+  gap: 100px;
 }
 
 .header {
@@ -64,9 +64,47 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.game-hand {
+  background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  background-repeat: no-repeat;
   width: 120px;
   height: 120px;
+  border-radius: 50%;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.game-scissors {
+  background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.game-rock {
+  background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 #hand {
@@ -81,13 +119,40 @@ body {
 
 #rock {
   top: 75%;
-  left: 40%;
-
-  /* right: 0; */
+  left: 42%;
 }
 
 .game-icon img {
   width: 50px;
+}
+
+#game-screen {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  display: none;
+}
+
+.screen-con {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-direction: column;
+}
+
+#user-screen-item,
+#computer-screen-item {
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#user,
+#computer {
+  display: none;
 }
 
 .rules {

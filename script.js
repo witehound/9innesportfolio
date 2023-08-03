@@ -11,6 +11,19 @@ const rock = document.getElementById("rock");
 const gameScreen = document.getElementById("game-screen");
 
 const userScreenItem = document.getElementById("user-screen-item");
+const computerScreenItem = document.getElementById("computer-screen-item");
+
+const data = [
+  [hand, "hsl(230, 89%, 62%), hsl(230, 89%, 65%)", "./images/icon-paper.svg"],
+  [
+    scissors,
+    "hsl(39, 89%, 49%), hsl(40, 84%, 53%)",
+    "images/icon-scissors.svg",
+  ],
+  [rock, "hsl(349, 71%, 52%), hsl(349, 70%, 56%)", "images/icon-rock.svg"],
+];
+
+const cgn = Math.floor(Math.random() * 2);
 
 openRules.addEventListener("click", () => {
   ruleModal.style.display = "block";
@@ -23,54 +36,42 @@ closeIcon.addEventListener("click", () => {
   openRules.style.display = "block";
 });
 
-function userMove(type, bgColor, src) {
+const move = (bgColor, src, userScreenItem) => {
+  game.style.display = "none";
+  gameScreen.style.display = "block";
+  gameScreen.style.display = "flex";
+  gameScreen.style.height = "auto";
+  userScreenItem.style.display = "block";
+  userScreenItem.style.width = "200px";
+  userScreenItem.style.height = "200px";
+  userScreenItem.style.borderRadius = "50%";
+  userScreenItem.style.backgroundImage = `linear-gradient(${bgColor})`;
+  userScreenItem.style.display = "flex";
+  const user = document.createElement("div");
+  user.style.backgroundColor = "white";
+  user.style.width = "170px";
+  user.style.height = "170px";
+  user.style.borderRadius = "50%";
+  user.style.display = "flex";
+  user.style.alignItems = "center";
+  user.style.justifyContent = "center";
+  const image = document.createElement("img");
+  image.setAttribute("src", src);
+  user.appendChild(image);
+  userScreenItem.appendChild(user);
+};
+
+function play(type, bgColor, src, userScreenItem) {
   type.addEventListener("click", () => {
-    game.style.display = "none";
-    gameScreen.style.display = "block";
-    gameScreen.style.display = "flex";
-    gameScreen.style.height = "auto";
-    userScreenItem.style.display = "block";
+    move(bgColor, src, userScreenItem);
 
-    userScreenItem.style.width = "200px";
-    userScreenItem.style.height = "200px";
-    userScreenItem.style.borderRadius = "50%";
-    userScreenItem.style.backgroundImage = `linear-gradient(${bgColor})`;
-
-    userScreenItem.style.display = "flex";
-    // userScreenItem
-
-    const user = document.createElement("div");
-
-    user.style.backgroundColor = "white";
-    user.style.width = "170px";
-    user.style.height = "170px";
-    user.style.borderRadius = "50%";
-    user.style.display = "flex";
-    user.style.alignItems = "center";
-    user.style.justifyContent = "center";
-
-    const image = document.createElement("img");
-
-    image.setAttribute("src", src);
-
-    user.appendChild(image);
-
-    userScreenItem.appendChild(user);
+    setTimeout(
+      () => move(data[cgn][1], data[cgn][2], computerScreenItem),
+      2000
+    );
   });
 }
 
-userMove(
-  hand,
-  "hsl(230, 89%, 62%), hsl(230, 89%, 65%)",
-  "./images/icon-paper.svg"
-);
-userMove(
-  scissors,
-  "hsl(39, 89%, 49%), hsl(40, 84%, 53%)",
-  "images/icon-scissors.svg"
-);
-userMove(
-  rock,
-  "hsl(349, 71%, 52%), hsl(349, 70%, 56%)",
-  "images/icon-rock.svg"
-);
+for (let i = 0; i < data.length; i++) {
+  play(data[i][0], data[i][1], data[i][2], userScreenItem);
+}
